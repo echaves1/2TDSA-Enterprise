@@ -33,7 +33,7 @@ public class ManyToOneTeste {
 				new GregorianCalendar(1998, Calendar.JUNE, 9), grupo);
 		Aluno aluno4 = new Aluno(0, "Rita", 
 				new GregorianCalendar(1999, Calendar.DECEMBER, 25), grupo);
-		
+		/*
 		//Criar uma lista de alunos e adiciona-los
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		alunos.add(aluno1);
@@ -43,6 +43,11 @@ public class ManyToOneTeste {
 		
 		//Coloca a lista de aluno no grupo
 		grupo.setAlunos(alunos);
+		*/
+		grupo.addAluno(aluno1);
+		grupo.addAluno(aluno2);
+		grupo.addAluno(aluno3);
+		grupo.addAluno(aluno4);
 		
 		dao.cadastrar(grupo);
 		try {

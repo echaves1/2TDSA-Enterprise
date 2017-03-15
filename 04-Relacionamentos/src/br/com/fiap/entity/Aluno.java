@@ -30,7 +30,7 @@ public class Aluno {
 	@Column(name="DT_NASCIMENTO")
 	private Calendar dataNascimento;
 	
-	@ManyToOne(cascade=CascadeType.PERSIST)
+	@ManyToOne(cascade=CascadeType.PERSIST)	
 	private GrupoAm grupo;
 	
 	public Aluno(int rm, String nome, Calendar dataNascimento, GrupoAm grupo) {
