@@ -25,6 +25,15 @@ public class Tecnico {
 	@Column(name="NM_TECNICO")
 	private String nome;
 	
+	public Tecnico(String nome) {
+		super();
+		this.nome = nome;
+	}
+
+	public Tecnico() {
+		super();
+	}
+
 	//mappedBy -> nome do ATRIBUTO que mapeia o relacionamento (na classe time)
 	//fetch LAZY -> quando buscar o tecnico o time não será carregado
 	//Quando tem o mappedBy não pode colocar o @JoinColumn

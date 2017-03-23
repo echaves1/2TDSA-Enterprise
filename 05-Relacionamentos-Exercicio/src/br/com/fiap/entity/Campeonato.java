@@ -21,12 +21,22 @@ public class Campeonato {
 
 	@Id
 	@Column(name="CD_CAMPEONATO")
-	@GeneratedValue(generator="CD_CAMPEONATO",strategy=GenerationType.SEQUENCE)
+	@GeneratedValue(generator="seqCampeonato",strategy=GenerationType.SEQUENCE)
 	private int codigo;
 	
 	@Column(name="NM_CAMPEONATO")
 	private String nome;
 	
+	public Campeonato(String nome) {
+		super();
+		this.nome = nome;
+	}
+
+	public Campeonato() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	@ManyToMany(mappedBy="campeonatos",cascade=CascadeType.PERSIST,fetch=FetchType.EAGER)
 	//mappedBy -> não tem @JoinTable
 	private List<Time> times;

@@ -56,6 +56,20 @@ public class Time {
 	@OneToMany(mappedBy="time",cascade=CascadeType.PERSIST)	
 	private List<Jogador> jogadores = new ArrayList<Jogador>();
 	
+	public Time() {
+		super();
+	}
+
+	public Time(String nome, Calendar dataFundacao, int titulos, Tecnico tecnico) {
+		super();
+		this.nome = nome;
+		this.dataFundacao = dataFundacao;
+		this.titulos = titulos;
+		this.tecnico = tecnico;
+	}
+
+
+
 	//Método para relacionamento OneToMany, para facilitar o cadastro
 	//do relacionamento em cascata
 	public void addJogador(Jogador jogador){

@@ -27,6 +27,15 @@ public class Jogador {
 	@ManyToOne(cascade={CascadeType.MERGE,CascadeType.PERSIST})
 	@JoinColumn(name="CD_TIME")
 	private Time time;
+	
+	public Jogador(String nome) {
+		super();
+		this.nome = nome;
+	}
+
+	public Jogador() {
+		super();
+	}
 
 	public int getCodigo() {
 		return codigo;
