@@ -8,6 +8,7 @@ import javax.persistence.TypedQuery;
 
 import br.com.fiap.dao.PacoteDAO;
 import br.com.fiap.entity.Pacote;
+import br.com.fiap.entity.Transporte;
 
 public class PacoteDAOImpl extends GenericDAOImpl<Pacote,Integer> implements PacoteDAO{
 
@@ -27,6 +28,17 @@ public class PacoteDAOImpl extends GenericDAOImpl<Pacote,Integer> implements Pac
 		TypedQuery<Pacote> query = //Nome da Classe e do atributo
 				em.createQuery("from Pacote p where p.qtdDias >= :churros",Pacote.class);
 		query.setParameter("churros", dias);		
+		return query.getResultList();
+	}
+
+	@Override
+	public List<Pacote> buscarPorTransporte(Transporte transporte) {
+		TypedQuery<Pacote> query = em.createQuery(
+			"from Pacote p where p.transporte = :t",
+			Pacote.class);
+		
+		query.setParameter("t", transporte);
+		
 		return query.getResultList();
 	}
 
